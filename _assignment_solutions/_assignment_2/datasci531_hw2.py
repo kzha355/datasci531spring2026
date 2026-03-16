@@ -27,7 +27,7 @@ class Node:
     @next.setter 
     def next(self, node_next):
         """Set next node"""
-        if type(node_next) != type(self):
+        if type(node_next) != type(self) and type(node_next) != type(None):
             raise ValueError("next should be another Node!")
         self._next = node_next 
 
