@@ -38,7 +38,29 @@ class BinaryTree:
 
     def __repr__(self):
         return f"BinaryTree with root value {self.key}"
-    
+    # write functions for the traversal (just print the value of the key of each node)
+
+    def preorder(self):
+        print(self.get_root_val())
+        if self.left_child:
+            self.left_child.preorder()
+        if self.right_child:
+            self.right_child.preorder()
+
+    def inorder(self):
+        if self.left_child:
+            self.left_child.inorder()
+        print(self.get_root_val())
+        if self.right_child:
+            self.right_child.inorder()
+
+    def postorder(self):
+        if self.left_child:
+            self.left_child.postorder()
+        if self.right_child:
+            self.right_child.postorder()
+        print(self.get_root_val())
+
 class Stack:
     # Implementation of a Stack
     # Bottom of Stack is at beginning of list (position 0)
